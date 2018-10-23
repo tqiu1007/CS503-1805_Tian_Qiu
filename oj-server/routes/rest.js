@@ -10,7 +10,7 @@ const nodeRestClient = require('node-rest-client').Client;
 const restClient = new nodeRestClient()
 
 // executor
-EXECUTOR_SERVER_URL = 'http://localhost:5000/build_and_run';
+EXECUTOR_SERVER_URL = 'http://executor/build_and_run';
 
 restClient.registerMethod('build_and_run', EXECUTOR_SERVER_URL, 'POST');
 

@@ -53,7 +53,7 @@ def load_image():
 
 def make_dir(dir):
 	try:
-		os.mkdir(dir)
+		os.makedirs(dir)
 	except OSError:
 		print("cannot create directory")
 
