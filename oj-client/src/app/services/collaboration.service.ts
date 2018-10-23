@@ -41,7 +41,7 @@ export class CollaborationService {
 
   // restore buffer from redis cache
   restoreBuffer(): void {
-		// emit restoreBuffer event, let server to handle this event
+	// emit restoreBuffer event, let server to handle this event
     this.collaborationSocket.emit("restoreBuffer");
   }
 }

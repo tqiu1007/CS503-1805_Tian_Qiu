@@ -1,5 +1,5 @@
 FROM ubuntu:16.04
-MAINTAINER thomas
+MAINTAINER alex1007
 
 RUN apt-get update
 RUN apt-get install -y openjdk-8-jdk
