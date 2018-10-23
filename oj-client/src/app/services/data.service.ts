@@ -1,10 +1,12 @@
+
 import { Injectable } from '@angular/core';
-import { Problem } from '../models/problem.model';
+// import { Problem } from '../models/problem.model';
 // import { PROBLEMS } from '../mock-problems';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { BehaviorSubject } from 'rxjs';
 
+import { Problem } from '../models/problem.model';
 
 @Injectable({
   providedIn: 'root'
@@ -56,6 +58,18 @@ export class DataService {
         return res;
       })
       .catch(this.handleError);
+  }
+
+  buildAndRun(data): Promise<any> {
+    const options = { headers: new HttpHeaders({ 'Content-Type': 'application/json'})};
+    return this.httpClient.post('api/v1/build_and_run', data, options)
+      .toPromise()
+      .then((res: any) => {
+        console.log(res);
+
+        return res;
+      })
+      .catch(this.handleError);    
   }
 
   private handleError(error: any): Promise<any> {
